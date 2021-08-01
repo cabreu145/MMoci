@@ -1,0 +1,60 @@
+{% extends 'miltonblog/postfotos.html' %}
+{% load static %}
+{% block wrapper %}
+<!--Page Header Start-->
+<section class="page-header">
+    <div class="page-header-bg"
+        style="background-image: url({% static 'miltonblog/images/resources/page-header-about-bg.png'%})">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page-header-content">
+                    <h2>Videos</h2>
+
+
+                    <ul class="thm-breadcrumb list-unstyled">
+                
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="event_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                {% for post in posts %}
+                <div class="event_page_single">
+                    
+                    <div class="event_page_content">
+                        <div class="event_page_content_title">
+                            <h4>{{post.title}}</h4>
+
+                        </div>
+                        <div class="event_page_text">
+                            <video id="my-video" class="video-js"  controls preload="auto" 
+                                 data-setup="{}">
+                                <source src="{{post.mp4}}" type="video/mp4" />
+                                <source src="{{post.webm}}" type="video/webm" />
+                                <p class="vjs-no-js">
+                                    To view this video please enable JavaScript, and consider upgrading to a
+                                    web browser that
+                                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5
+                                        video</a>
+                                </p>
+                            </video>
+                        </div>
+                        <div class="event_page_btn top_section_one_preface_btn">
+                            <p>{{post.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %} 
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

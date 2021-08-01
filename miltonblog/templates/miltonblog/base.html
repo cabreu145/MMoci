@@ -1,0 +1,738 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Milton Millán</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/Rjbc0yx/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/tzfgjb4/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://i.ibb.co/pL9pRfL/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="https://i.ibb.co/YpLzgDP/android-chrome-256x256.png">
+    <link rel="icon" type="image/png" sizes="150x150" href="https://i.ibb.co/bdM96Fy/mstile-150x150.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://i.ibb.co/xzxsPDy/android-chrome-192x192.png">
+    <!-- Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css-->
+    <link rel="stylesheet" href="{% static 'miltonblog/css/animate.min.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/magnific-popup.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/fontawesome-all.min.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/swiper.min.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/bootstrap-select.min.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/jarallax.css'%}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+   <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> 
+
+
+    <link rel="stylesheet" href="{% static 'miltonblog/css/jquery.mCustomScrollbar.min.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/bootstrap-datepicker.min.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/vegas.min.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/nouislider.min.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/nouislider.pips.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/polimark.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/gilroy-fonts.css'%}">
+    <!-- Template styles -->
+    <link rel="stylesheet" href="{% static 'miltonblog/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'miltonblog/css/responsive.css'%}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+
+    
+
+
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+        var OneSignal = window.OneSignal || [];
+        OneSignal.push(function () {
+            OneSignal.init({
+                appId: "ec9fe516-f8f6-4081-b60b-e29dbbc72ac2",
+                promptOptions: {
+                    customlink: {
+                        enabled: true, /* Required to use the Custom Link */
+                        style: "button", /* Has value of 'button' or 'link' */
+                        size: "large", /* One of 'small', 'medium', or 'large' */
+                        color: {
+                            button: '#FA710A', /* Color of the button background if style = "button" */
+                            text: '#FFFFFF', /* Color of the prompt's text */
+                        },
+                        text: {
+                            subscribe: "Suscribirse", /* Prompt's text when not subscribed */
+
+                            explanation: "Ya estas Suscrito", /* Optional text appearing before the prompt button */
+                        },
+                        unsubscribeEnabled: false, /* Controls whether the prompt is visible after subscription */
+                    }
+                }
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+    
+
+    <div class="preloader">
+        <img src="{% static 'miltonblog/images/loader.png'%}" class="preloader__image" alt="">
+    </div><!-- /.preloader -->
+
+    <div class="page-wrapper">
+
+        <div class="site-header__header-one-wrap clearfix">
+            <div class="header_top_three">
+                <div class="container">
+                    <div class="header_top_three_inner clearfix">
+
+                        <div class="header_top_three_inner_left float-left">
+                            <ul id="estado" class="header_top_three_inner_contact_info list-unstyled"
+                                style="color: white; font-family: 'Montserrat', sans-serif; text-align: justify;" >
+                                <script>
+                                    var estado = document.querySelector('#estado')
+                                    var clima = document.querySelector('#clima')
+
+                                    fetch('https://api.weatherapi.com/v1/current.json?key=8ac65309ca194f528bc193211211004&q=calkini-campeche-mexico')
+                                        .then(res => res.json())
+                                        .then(data => {
+                                            console.log(data)
+                                            estado.innerHTML = `<li><span class="fas fa-thermometer-half"></span>${data.current.temp_c} °C  ${data.location.name}, ${data.location.region}.</li>`;
+
+                                        })
+                                </script>
+                            </ul>
+                        </div>
+
+                        <div class="header_top_three_inner_right float-right">
+                            <div class="header_top_three_inner_right_social">
+                                <div class="header_top_three_inner_right_social-list">
+
+                                    <a href="https://www.facebook.com/soymiltonmillan/" aria-label="facebook"><i
+                                            class="fab fa-facebook-square"></i></a>
+                                    <a href="https://www.instagram.com/soymiltonmillan" aria-label="instagram"><i
+                                            class="fab fa-instagram"></i></a>
+                                   
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <header class="main-nav__header-one">
+                <div class="container">
+                    <nav class="header-navigation one stricky">
+                        <div class="container-box clearfix">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="main-nav__left main-nav__left_one float-left">
+                                <div class="logo_one">
+                                    <a href="{% url 'home' %}" class="main-nav__logo">
+                                        <img src="{% static 'miltonblog/images/logo-mc-ft.png'%}" style="width: 50%;"
+                                            class="main-logo" alt="Awesome Image">
+                                    </a>
+                                </div>
+                                <a href="#" class="side-menu__toggler">
+                                    <i class="fa fa-bars" style="background-color: white;"></i>
+                                </a>
+                            </div>
+                            {% block navbar %}
+                            <div class="main-nav__main-navigation one float-right">
+                                <ul class=" main-nav__navigation-box float-left">
+                                    <li class=" current">
+                                        <a href="{% url 'home' %}">Inicio</a>
+                                    </li>
+                                    <li class=""><a href="{% url 'about' %}">Acerca</a></li>
+                                    <li class="dropdown">
+                                        <a>Publicaciones</a>
+                                        <ul>
+                                            <li><a href="{% url 'fotos' %}">Fotos</a></li>
+                                            <li><a href="{% url 'video' %}">videos</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class=""><a href="{% url 'sonrisas' %}">Descargas</a></li>
+
+                                </ul>
+
+                            </div><!-- /.navbar-collapse -->
+                            {% endblock %}
+                        </div>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        {% block wrapper %}
+        <!--Main Slider Start-->
+        <section class="main-slider-one">
+            <div class="main-slider-one-shape-round"></div>
+            <div class="main-slider-shape-dots"><img
+                    src="{% static 'miltonblog/images/chopsmile.png'%}" alt=""></div>
+            <div class="main-slider-small-round">
+                
+            </div>
+            <div class="main-slider-img"><img src="{% static 'miltonblog/images/mil2.png'%}" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="main-slider-one-left-content">
+                            <div class="main-slider-one-shape-bg"></div>
+                            <div class="main_slider_one_left">
+                                <img  src="{% static 'miltonblog/images/miltonmillan.png'%}"
+                                            >
+                                <a href="{% url 'about' %}" class="thm-btn">Conóceme<i
+                                        class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Top Section One Start-->
+        <section class="top_section_one">
+            <div class="top_section_one_shape_2"
+                style="background-image: url({% static 'miltonblog/images/shapes/image.png'%})"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="donation_taker">
+                            <div class="top_section_one_shape_1"></div>
+                            <div class="donation_taker_content_inner">
+                                <div class="donation_taker_content">
+                                    <h3 style="color: white;  text-align: justify;" >Contacto</h3>
+
+                                    <p>Suscríbete hoy mismo para recibir las últimas noticias, vídeos y mucho más sobre
+                                        Milton Millán.</p>
+                                </div>
+                                <div class="donation_taker_input_box">
+
+                                </div>
+                                <div class="donation_taker_btn onesignal-customlink-subscribe">
+                                    <a href="https://www.facebook.com/soymiltonmillan"
+                                        class="thm-btn onesignal-customlink-explanation">Suscribirse <i
+                                            class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="top_section_one_preface">
+                            <div class="top_section_one_preface_title">
+                                <h4>Se parte del movimiento</h4>
+                            </div>
+                            <div class="top_section_one_preface_text">
+                                <p class="text-1">Campeche reclama un cambio de régimen de manera urgente.<br>Las grandes
+                                    debilidades institucionales que hoy refleja el Estado mexicano requieren un golpe de
+                                    timón, de una transformación de fondo y a fondo, para frenar el deterioro de la vida
+                                    estatal y municipal y atender las diferentes crisis que se empalman y alimentan
+                                    círculos perversos.
+                                </p>
+                                <p class="text-2">La desigualdad, la inseguridad, la corrupción, la impunidad, la
+                                    falta de oportunidades y la incertidumbre en la que día a día viven la mayoría de
+                                    las personas en nuestro estado, se retroalimentan dando como resultado una profunda
+                                    desconfianza de la ciudadanía en sus gobiernos.</p>
+
+                            </div>
+                            <div class="top_section_one_preface_btn">
+                                <a href="{% url 'about' %}" class="thm-btn">Seguir leyendo<i
+                                        class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="upcomming-events">
+                            <h4 class="upcomming-events_title">Eventos Recientes</h4>
+                            <ul class="upcomming-events-list list-unstyled">
+                                {% for post in posts %}
+                                <li>
+                                    <div class="events_date">
+                                        <h4>{{post.date.day}}</h4>
+                                        <span>{{post.date|date:'F'}}</span>
+                                    </div>
+                                    <div class="events_content">
+                                        <p><a href="{% url 'detallesfotos' post.id %}">{{post.title}}</a></p>
+                                        <ul class="time-location list-unstyled">
+                                            <li><i class="far fa-clock"></i>{{post.date.time|time:'h:i a'}}</li>
+                                            <li><i class="icon-005-pin"></i>{{post.place}}</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                {% endfor %} 
+                            </ul>
+                            <div class="upcomming-events_btn">
+                                <a href="{% url 'fotos' %}">Más eventos<i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Top Section One End-->
+
+
+
+        <!--About One Start-->
+        <section class="about_one">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="about_one_left">
+                            <div class="block-title text-left">
+                                <h4>Movimiento Ciudadano</h4>
+                                <h2></h2>
+                                <p class="block-title-text">Movimiento Ciudadano es el enlace entre la sociedad y el
+                                    Estado para garantizar el cumplimiento de las demandas del pueblo. Somos un espacio
+                                    de participación para la sociedad en el que se conciertan la voluntad y la acción
+                                    de quienes desean colaborar con otras personas ciudadanas en la tarea de forjar una
+                                    nueva nación. Nuestro movimiento promueve la transformación del país por las
+                                    vías democrática y pacífica. Rechazamos toda forma de violencia y nos
+                                    pronunciamos a favor de un auténtico sistema de reglas democráticas que promueva
+                                    la competencia equitativa y civilizada para alcanzar el poder.
+                                </p>
+                            </div>
+                            <div class="about_one_left_text">
+                                <p>Movimiento Ciudadano está a favor de los derechos humanos, la igualdad, la
+                                    solidaridad, la libertad, la justicia social, el respeto a la diversidad y los
+                                    valores democráticos. </p>
+                            </div>
+                            <div class="top_section_one_preface_btn about_one_btn">
+                                <a href="https://movimientociudadano.mx/nuestra-historia" class="thm-btn">Seguir
+                                    Leyendo<i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="about_one_right">
+                            <div class="about_one_right_img">
+                                <img src="{% static 'miltonblog/images/logomoci.png'%}" alt="">
+                                <div class="about_one_right_last_img">
+                                    <img src="{% static 'miltonblog/images/about/about-one-img-2.png'%}"
+                                        style="width: 315px;" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--About One End-->
+
+        <!--Mission_And_Vission Start-->
+        <section class="mission_and_vission">
+            <div class="container">
+                <div class="block-title text-center">
+                    <h2>Misión y Visión</h2>
+                    <p class="block-title-text" style="color: white; font-family: 'Montserrat', sans-serif; text-align: justify;" >Nuestro proyecto progresista está comprometido
+                        con la profundización de las practicas democráticas, porque reconocemos la fuerza de la
+                        pluralidad del diálogo y el control del poder a partir de la voluntad y la participación
+                        ciudadana; para que la sociedad goce de mayores niveles de libertad, igualdad y bienestar.
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4">
+                        <!--Mission_And_Vission Single-->
+                        <div class="mission_and_vission_single wow fadeInUp">
+                            <div class="mission_and_vission_img">
+                                <img src="{% static 'miltonblog/images/sonrisa.jpg'%}"
+                                    alt="">
+                            </div>
+                            <br>
+                            <div class="mission_and_vission_content">
+                                <h4 style="margin-top: -20px;" >MOVIMIENTO CIUDADANO </h4>
+                                <br>
+
+                                <p style="color: white; font-family: 'Montserrat', sans-serif; text-align: justify;" >Movimiento Ciudadano es un vehículo al servicio de las
+                                    personas y sus causas. Somos un espacio de encuentro, diálogo, coordinación y
+                                    lucha para la sociedad. Frente a la perversión de la vida pública nacional, nos
+                                    constituimos como una alternativa para que las personas ciudadanas libres, quienes
+                                    entienden las necesidades de sus comunidades y sufren los grandes problemas de
+                                    México, tomen la política en sus manos.</p>
+                                    <br>
+                                <div class="mission_and_vission_arrow">
+                                    <a><span class="icon-001-right-arrow"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4">
+                        <!--Mission_And_Vission Single-->
+                        <div class="mission_and_vission_single wow fadeInUp" data-wow-delay="100ms">
+                            <div class="mission_and_vission_img">
+                                <img  src="{% static 'miltonblog/images/mujer.jpg''%}"
+                                    alt="">
+                            </div>
+                            <div class="mission_and_vission_content">
+                                
+                                <h4 >LAS CAUSAS DE MOVIMIENTO CIUDADANO </h4>
+                               
+
+                                <p  style="color: white; margin-top: 20px; font-family: 'Montserrat', sans-serif; text-align: justify;" >Siguiendo los principios de la socialdemocracia, Movimiento
+                                    Ciudadano está a favor
+                                    de los derechos humanos, la igualdad, la solidaridad, la libertad, la justicia
+                                    social, el respeto a la diversidad y los valores democráticos. </p>
+
+                                <p style="color: white; font-family: 'Montserrat', sans-serif; text-align: justify;" >Asumimos como una obligación ser portavoces de las demandas
+                                    sociales que hoy no están en el debate público, encabezar discusiones en las que
+                                    otros no quieren participar y dar rumbo a nuestras acciones.
+                                </p>
+
+
+                                <div class="mission_and_vission_arrow">
+                                    <a><span class="icon-001-right-arrow"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4">
+                        <!--Mission_And_Vission Single-->
+                        <div class="mission_and_vission_single wow fadeInUp" data-wow-delay="200ms">
+                            <div class="mission_and_vission_img">
+                                <img  src="{% static 'miltonblog/images/artesano.jpg'%}"
+                                    alt="">
+                            </div>
+                            <div class="mission_and_vission_content">
+                                <h4>NUESTRA AGENDA</h4>
+                                <br>
+                                <p style="color: white; font-family: 'Montserrat', sans-serif; text-align: justify;" ><strong style="color: #5e5858;">La agenda
+                                        ciudadana</strong><br>Oxigenar la vida democrática, transformando la relación
+                                    entre
+                                    la ciudadanía y el poder público.</p>
+                                <p style="color: white; font-family: 'Montserrat', sans-serif; text-align: justify;" ><strong style="color: #5e5858;">La agenda de movilidad social e
+                                        igualdad de oportunidades</strong></strong> <br> Acabar con la falsa
+                                    disyuntiva entre los objetivos económicos y los objetivos sociales.</p>
+                                <p style="color: white; font-family: 'Montserrat', sans-serif; text-align: justify;" ><strong style="color: #5e5858;">La agenda de
+                                        derechos</strong></strong><br> Reconocimiento de la dignidad de las personas y
+                                    la verdadera
+                                    progresividad en la protección de su derecho a vivir libres, con seguridad y
+                                    bienestar.</p>
+                                <div class="mission_and_vission_arrow">
+                                    <a><span class="icon-001-right-arrow"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Mission_And_Vission End-->
+
+        <!--Volunteer One Start-->
+        <section class="volunteer_one">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="volunteer_one_inner wow fadeInUp">
+                            <div class="volunteer_one_inner_left">
+                                <h4 style="color: white;  text-align: justify;" >Contactanos</h4>
+                                <h2>Redes Sociales</h2>
+
+                                <a href="https://www.facebook.com/soymiltonmillan/" class="icon-button facebook"><i
+                                        class="fab fa-facebook"></i><span></span></a>
+                                <a href="https://www.instagram.com/soymiltonmillan" class="icon-button instagram"><i
+                                        class="fab fa-instagram"></i><span></span></a>
+                                
+                            </div>
+                            <div class="volunteer_one_inner_right">
+                                <a href="mailto:campeche@movimientociudadano.mx" class="thm-btn">Contacto<i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Volunteer One End-->
+
+        <!--Candidate One Start-->
+        <section class="candidate_one">
+            <div class="container">
+                <div class="block-title text-center">
+                    <h4 >Candidato Presidente Municipal</h4>
+                    <h2>Calkiní</h2>
+                </div>
+                <div class="row">
+                    <div class="col-xl-5 col-lg-5">
+                        <div class="candidate_one_left wow slideInLeft" data-wow-delay="100ms">
+                            <div  class="candidate_one_img">
+                                <img  src="{% static 'miltonblog/images/miltonpresen.png'%}" alt="">
+                                <div class="candidate_one_video_box">
+                                    <a href="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fsoymiltonmillan%2Fvideos%2F151011456949523%2F&show_text=false&width=560" class="candidate_one_video__btn video-popup"><i class="icon-006-play"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-7">
+                        <div class="candidate_one_right">
+                            <div class="candidate_one_right_title">
+
+                                <h2>Milton Ulises Millán Atoche </h2>
+                                <p style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Ciudadano honesto y responsable que está en Movimiento por
+                                    Calkiní. Es Cirujano Dentista y tiene un posgrado en Endodoncia. Lo que más le
+                                    motiva en su trabajo es poder ayudar a sus pacientes para que tengan una sonrisa en
+                                    el rostro. Tiene 3 hijos y es un padre de familia amoroso y comprometido
+                                </p> <br>
+                                <p style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Trabajando como un solo equipo, con la convicción de continuar hacia adelante para
+                                    Construir un Calkiní innovador #Sonríealfuturo</p>
+                            </div>
+                            <div class="candidate_one_right_text">
+                            
+
+                            </div>
+                            <div class="candidate_one_signature">
+                                <div class="candidate_one_signature_text">
+                                    <img src="{% static 'miltonblog/images/logocool.png'%}" style="width: 200px;"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Candidate One End-->
+        {% endblock %}
+
+
+        {% block footer %}
+        <!--Site Footer One Start-->
+        <footer class="site_footer_one">
+            <div class="container">
+
+                <div class="site_footer_one_bottom">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="footer-widget__column footer-widget__about marb">
+                                <div class="footer-widget__about_logo">
+                                    <a href=""><img src="{% static 'miltonblog/images/miltonwhite.png'%}"
+                                            style="width: 180px;" alt=""></a>
+                                </div>
+                                <div class="footer-widget__about_logo_text">
+                                    <img src="{% static 'miltonblog/images/cambiototal.png'%}"
+                                            style="width: 180px;" alt="">
+                                </div>
+                                <br>
+                                <div class="site_footer_one_bottom__social">
+
+                                    <a href="https://www.facebook.com/soymiltonmillan/"><i
+                                            class="fab fa-facebook-square"></i></a>
+                                    <a href="https://www.instagram.com/soymiltonmillan"><i
+                                            class="fab fa-instagram"></i></a>
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                            <div class="footer-widget__column footer-widget__address marb">
+                                <div class="footer-widget__title_two">
+                                    <h3>Dirección</h3>
+                                </div>
+                                <ul class="footer-widget__address_list list-unstyled">
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-005-pin"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>Av. López Mateos, N° 330, Manzana A,
+                                                Fraccionamiento Prado, C.P. 24040,
+                                                San Francisco de Campeche, Campeche
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-003-envelope"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="mailto:campeche@movimientociudadano.mx"
+                                                    style="font-size: 16px;">campeche@movimientociudadano.mx
+                                                </a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-004-phone-call"></span>
+
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="tel:981-811-7141">981-811-7141
+                                                </a></p>
+                                            <p><a href="tel:981-816-4411">981-816-4411
+                                                </a></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div style="padding-left: 5%;" class="col-xl-1 col-lg-1 col-md-6 wow fadeInUp"
+                            data-wow-delay="300ms">
+                            <div class="footer-widget__column footer-widget__links margin-b-30">
+                                <div class="footer-widget__title_two">
+                                    <h3>Links</h3>
+                                </div>
+                                <ul class="footer-widget__links_list list-unstyled">
+                                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                                    <li><a href="{% url 'about' %}">Acerca</a></li>
+                                    <li><a href="{% url 'fotos' %}">Fotos</a></li>
+                                    <li><a href="{% url 'video' %}">Videos</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                            <div class="footer-widget__column footer-widget__Resource">
+                                <div class="footer-widget__title_two">
+                                    <h3></h3>
+                                </div>
+                                <ul class="footer-widget__Resource__links_list list-unstyled">
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site_footer_one_menu">
+                    <div class="site_footer_one_menu_Designed_by">
+                        <p>© Todos los derechos reservados, 2021 <span class="name">Milton Millán</span></p>
+                    </div>
+                    <ul class="site_footer_one_menu_list list-unstyled">
+                        <li><a href="#">Terminos & Condiciones</a></li>
+                        <li><a href="{% url 'privacy' %}">política de privacidad</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!--Site Footer One End-->
+        {% endblock %}
+
+
+
+
+
+
+    </div><!-- /.page-wrapper -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay side-menu__toggler mobile-nav__toggler"></div>
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close side-menu__toggler mobile-nav__toggler">
+                <i class="fa fa-times"></i>
+            </span>
+            <div class="logo-box">
+                <a href="{% url 'home' %}" aria-label="logo image">
+                    <img src="{% static 'miltonblog/images/miltonmillanwhite.png'%}" style="width: 50%;" alt="" />
+                </a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container clearfix"></div>
+            <!-- /.mobile-nav__container -->
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fas fa-thermometer-half"></i>
+                    <a id="clima"></a>
+                </li>
+                <script>
+                    var clima = document.querySelector('#clima')
+
+
+
+
+                    fetch('https://api.weatherapi.com/v1/current.json?key=8ac65309ca194f528bc193211211004&q=calkini-campeche-mexico')
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data)
+                            clima.innerHTML = `<a>${data.current.temp_c} °C  ${data.location.name}, ${data.location.region}.</a`;
+
+                        })
+                </script>
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+
+                    <a href="https://www.facebook.com/soymiltonmillan/" aria-label="facebook"><i
+                            class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.instagram.com/soymiltonmillan" aria-label="instagram"><i
+                            class="fab fa-instagram"></i></a>
+                            
+                    
+
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+    </div>
+
+
+
+    <div class="search-popup">
+        <div class="search-popup__overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.search-popup__overlay -->
+        <div class="search-popup__inner">
+            <form action="#" class="search-popup__form">
+                <input type="text" name="search" placeholder="Type here to Search....">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+
+    <script src="{% static 'miltonblog/js/jquery.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/waypoints.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/jquery.counterup.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/TweenMax.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/wow.js'%}"></script>
+    <script src="{% static 'miltonblog/js/jquery.magnific-popup.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/jquery.ajaxchimp.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/swiper.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/typed-2.0.11.js'%}"></script>
+    <script src="{% static 'miltonblog/js/vegas.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/jquery.validate.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/bootstrap-select.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/countdown.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/jquery.mCustomScrollbar.concat.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/bootstrap-datepicker.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/nouislider.min.js'%}"></script>
+    <script src="{% static 'miltonblog/js/isotope.js'%}"></script>
+    <script src="{% static 'miltonblog/js/appear.js'%}"></script>
+    <script src="{% static 'miltonblog/js/jarallax.js'%}"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    <script src="{% static 'miltonblog/js/clima.js'%}"></script>
+
+
+    <!-- template scripts -->
+    <script src="{% static 'miltonblog/js/theme.js'%}"></script>
+
+
+</body>
+
+</html>

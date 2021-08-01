@@ -1,0 +1,79 @@
+{% extends 'miltonblog/base.html' %}
+{% load static %}
+{% block navbar %}
+<div class="main-nav__main-navigation one float-right">
+    <ul class=" main-nav__navigation-box float-left">
+        <li class="">
+            <a href="{% url 'home' %}">Inicio</a>
+        </li>
+        <li class=""><a href="{% url 'about' %}">Acerca</a></li>
+        <li class="dropdown current">
+            <a>Publicaciones</a>
+            <ul>
+                <li><a href="{% url 'fotos' %}">Fotos</a></li>
+                <li><a href="{% url 'video' %}">videos</a></li>
+
+            </ul>
+        
+        </li>
+        <li class=""><a href="{% url 'sonrisas' %}">Descargas</a></li>
+
+    </ul>
+
+</div><!-- /.navbar-collapse -->
+{% endblock %}
+
+{% block wrapper %}
+<!--Page Header Start-->
+<section class="page-header">
+    <div class="page-header-bg"
+        style="background-image: url({% static 'miltonblog/images/resources/page-header-about-bg.png'%})">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page-header-content">
+                    <h2>Fotos</h2>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="event_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                {% for post in posts %}
+                <div class="event_page_single">
+                    <div class="event_pate_img">
+                        <img loading="auto" src="{{post.image.url}}"  alt="">
+                        <div class="event_page_date_box">
+                            <h4>{{post.date.day}}</h4>
+                            <span>{{post.date|date:'F'}}</span>
+                        </div>
+                    </div>
+                    <div class="event_page_content">
+                        <div class="event_page_content_title">
+                            <h4></h4>
+                            <h3><a href="{% url 'detallesfotos' post.id %}">{{post.title}}</a></h3>
+                        </div>
+                       
+                        <ul class="event_page_time_location list-unstyled">
+                            <li><i class="far fa-clock"></i>{{post.date.time|time:'h:i a'}}</li>
+                            <li><i class="icon-005-pin"></i>{{post.place}}</li>
+                        </ul>
+                        <div class="event_page_btn top_section_one_preface_btn">
+                            <a  href="{% url 'detallesfotos' post.id %}" class="thm-btn">Ver detalles<i
+                                    class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %} 
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

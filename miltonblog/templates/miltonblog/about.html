@@ -1,0 +1,439 @@
+{% extends 'miltonblog/base.html' %}
+{% load static %}
+{% block navbar %}
+<div class="main-nav__main-navigation one float-right">
+    <ul class=" main-nav__navigation-box float-left">
+        <li class="">
+            <a href="{% url 'home' %}">Inicio</a>
+        </li>
+        <li class="current"><a href="{% url 'about' %}">Acerca</a></li>
+        <li class="dropdown">
+            <a>Publicaciones</a>
+            <ul>
+                <li><a href="{% url 'fotos' %}">Fotos</a></li>
+                <li><a href="{% url 'video' %}">videos</a></li>
+
+            </ul>
+        </li>
+        <li class=""><a href="{% url 'sonrisas' %}">Descargas</a></li>
+
+    </ul>
+
+</div><!-- /.navbar-collapse -->
+{% endblock %}
+
+{% block wrapper %}
+<!--Page Header Start-->
+<section class="page-header">
+    <div class="page-header-bg"
+        style="background-image: url({% static 'miltonblog/images/resources/page-header-about-bg.png'%})">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page-header-content">
+                    <h2>Acerca de </h2>
+                    <p>Milton Millán </p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Page Header Start-->
+
+<!--About two Start-->
+<section class="about_one two">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6">
+                <div class="about_one_left">
+                    <div class="block-title text-left">
+                        <h4>Biografía</h4>
+                        <h2 style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Calkiní sonríe al futuro</h2>
+                        <p style=" font-family: 'Montserrat', sans-serif; text-align: justify;" class="block-title-text">Soy Milton Millán, candidato de Movimiento Ciudadano para
+                            ser Presidente Municipal de Calkiní.</p>
+                    </div>
+                    <div class="about_one_left_text">
+                        <p style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Nací y crecí en Calkiní, estudié la licenciatura en Odontología, luego una
+                            especialidad en endodoncia. Fui regidor local de 2009 a 2012. Padre calkiniense,
+                            comprometido con el deporte y la juventud de Calkiní.</p>
+                    </div>
+                    <div class="top_section_one_preface_btn about_one_btn">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="about_one_right">
+                    <div class="about_one_right_img">
+                        <img class="about1" src="{% static 'miltonblog/images/about/DSC_0239-min.png'%}"
+                             alt="">
+                        <div class="about_one_right_last_img">
+                            <img src="{% static 'miltonblog/images/about/DSC_0171-min.jpg'%}" style="width: 350px;"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--About two End-->
+
+<!--Mission And Vission Three Start-->
+<section class="mission_and_vission_three four">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4">
+                <!--Mission And Vission Three Single-->
+                <div class="mission_and_vission_three_single wow fadeInUp" data-wow-delay="100ms">
+                    <div class="mission_and_vission_three_icon">
+                        <span class="icon-007-document"></span>
+                    </div>
+                    <div class="mission_and_vission_three_content">
+                        <h3>Nuestra misión</h3>
+                        <p style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Combatir la desigualdad, la
+                            marginación y la falta de oportunidades <br> <br></p>
+                    </div>
+                    <div class="mission_and_vission_three_arrow">
+                        <a><span class="icon-001-right-arrow"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+                <!--Mission And Vission Three Single-->
+                <div class="mission_and_vission_three_single wow fadeInUp" data-wow-delay="200ms">
+                    <div class="mission_and_vission_three_icon">
+                        <span class="icon-008-atomic"></span>
+                    </div>
+                    <div class="mission_and_vission_three_content">
+                        <h3>Nuestra visión</h3>
+                        <p style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Construir un gobierno autónomo que permita tomar
+                            decisiones de cara a los ciudadanos</p>
+                    </div>
+                    <div class="mission_and_vission_three_arrow">
+                        <a><span class="icon-001-right-arrow"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+                <!--Mission And Vission Three Single-->
+                <div class="mission_and_vission_three_single wow fadeInUp" data-wow-delay="300ms">
+                    <div class="mission_and_vission_three_icon">
+                        <span class="icon-009-group"></span>
+                    </div>
+                    <div class="mission_and_vission_three_content">
+                        <h3>Nuestro plan de trabajo</h3>
+                        <p style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Abrir las puertas para el diálogo y la participación ciudadana <br> <br></p>
+                    </div>
+                    <div class="mission_and_vission_three_arrow">
+                        <a><span class="icon-001-right-arrow"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Mission And Vission Three End-->
+
+<!--How We Use Donation Start-->
+<section class="how_we_use_donation">
+    <div class="container">
+        <div class="block-title text-center">
+            <h2>Nuestro compromiso ciudadano</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6">
+                <div class="how_we_use_donation_inner">
+                    <div class="how_we_use_donation_box">
+                        <div class="how_we_use_donation_iocn">
+                            <span class="fas fa-notes-medical"></span>
+                        </div>
+                        <div class="how_we_use_donation_content">
+                            <h3>Salud</h3>
+                            <ul class="ul">
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Fortalecer el servicio de atención a la salud, cubrir con el 100%
+                                        con las
+                                        ambulancias, para lograr traslados eficientes.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Elevar el servicio de atención médica básica gratuita
+                                        odontológica a las
+                                        comunidades, con tratamiento y seguimiento de manera permanente.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Disminuir la tasa de sobrepeso y obesidad por medio de campañas
+                                        de
+                                        sensibilización sobre las problemáticas colaterales que ocasiona dicha
+                                        enfermedad.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Implementar brigadas de nutriólogos que brinden información sobre
+                                        una
+                                        alimentación equilibrada y un estilo de vida sano</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="how_we_use_donation_box">
+                        <div class="how_we_use_donation_iocn">
+                            <span class="fas fa-home"></span>
+                        </div>
+                        <div class="how_we_use_donation_content">
+                            <h3>Vivienda</h3>
+                            <ul class="ul">
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Igualdad de Oportunidades, se considera la implementación de una
+                                        política social
+                                        orientada al desarrollo de capacidades básicas en la población.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Una vivienda digna, como elemento indispensable.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Construir una nueva lógica de desarrollo para el bienestar,
+                                        comprometida con la justicia y la equidad.</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="how_we_use_donation_box">
+                        <div class="how_we_use_donation_iocn">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#ffffff">
+                                            <path
+                                                d="M135.77922,7.06813c-0.87978,0 -1.75967,0.33529 -2.43219,1.00781l-10.70297,10.70297c-4.1796,4.17616 -4.98182,8.10625 -4.84422,12.40281c-4.37224,-0.32336 -8.82022,0.95014 -11.3211,3.55422c-4.51112,4.69304 -4.27342,12.07688 0.05375,19.5986l-30.58375,30.58375l-8.12297,3.58781c-0.38872,0.172 -0.74885,0.41962 -1.04813,0.7189l-14.02203,14.02875c-12.54597,-8.75391 -21.03772,-20.25409 -24.37563,-28.94438c1.81445,-5.43741 6.51205,-9.60282 13.35687,-11.51594c9.31208,-2.60064 22.36548,-0.58689 29.01156,9.97735c0.71208,1.1352 2.02826,1.73714 3.35266,1.5789c1.33128,-0.16856 2.43611,-1.09548 2.84203,-2.37172l5.78484,-18.26828c0.344,-1.1008 0.11427,-2.29356 -0.60469,-3.1914c-9.804,-12.212 -28.49551,-16.23578 -43.49047,-9.35922c-13.36505,6.12525 -20.08867,18.89301 -18.49,34.60828c-1.29346,14.82416 4.37216,29.3438 12.12734,37.75265h-15.07016c-1.89888,0 -3.44,1.53768 -3.44,3.44v37.84c0,1.90232 1.54112,3.44 3.44,3.44h137.6c1.89888,0 3.44,-1.53768 3.44,-3.44v-37.84c0,-1.90232 -1.54112,-3.44 -3.44,-3.44h-68.9075l7.525,-7.30328c0.4988,-0.48504 0.83662,-1.11278 0.97422,-1.7939l2.23063,-11.13969l24.57719,-24.44953c3.70377,2.06675 7.39443,3.20484 10.73656,3.20484c3.32304,0 6.30224,-1.05387 8.59328,-3.24515c2.39424,-2.29792 4.03114,-6.58233 3.74906,-11.11281c4.25184,0.16168 8.19881,-0.63006 12.41625,-4.85094l3.39297,-3.39297c1.3416,-1.34504 1.3416,-3.51934 0,-4.86438c-1.34504,-1.34504 -3.51933,-1.34504 -4.86437,0l-3.39297,3.39297c-3.34368,3.34712 -5.68729,3.09858 -11.56969,2.4725c-1.23152,-0.13072 -2.40182,0.39695 -3.12422,1.37735c-0.72584,0.9804 -0.88128,2.27153 -0.40312,3.39297c1.52736,3.58792 0.18146,7.51935 -0.9675,8.62016c-1.97046,1.88708 -5.60852,1.6552 -9.60781,-0.18141c2.85227,-4.03954 2.49796,-9.66297 -1.11531,-13.27625c-3.5085,-3.50539 -9.34575,-3.81676 -13.30984,-0.99437c-1.98019,-4.11257 -2.24718,-7.82986 -0.28891,-9.86985c1.08704,-1.13864 5.26132,-2.28969 8.82172,-0.77265c1.118,0.47472 2.39913,0.19834 3.37953,-0.52406c0.9804,-0.72584 1.49119,-2.03756 1.36391,-3.25188c-0.59512,-5.63816 -0.84431,-7.97069 2.49937,-11.31437l10.70297,-10.70297c1.34504,-1.34504 1.34504,-3.51933 0,-4.86438c-0.67252,-0.67252 -1.55241,-1.00781 -2.43219,-1.00781zM54.48906,11.09938c-0.30616,0.0172 -7.60213,0.41275 -13.48453,3.72891c-5.88584,3.31272 -10.00019,9.35325 -10.17219,9.60781c-1.05952,1.57208 -0.65161,3.70063 0.92047,4.76359c0.59168,0.39904 1.26436,0.59125 1.92828,0.59125c1.1008,0 2.18155,-0.5246 2.84203,-1.505c0.0344,-0.04816 3.40974,-4.96021 7.85422,-7.46453c4.44448,-2.50432 10.39245,-2.84531 10.45437,-2.84875c1.89544,-0.1032 3.35836,-1.71925 3.2586,-3.61469c-0.09632,-1.89544 -1.75053,-3.38931 -3.60125,-3.25859zM62.26937,24.03969c-1.92355,0.0442 -3.10245,0.33185 -3.225,0.36281c-1.83008,0.46096 -2.92282,2.30195 -2.48594,4.13203c0.43688,1.83008 2.29163,2.94545 4.13203,2.54641c0.22704,-0.0516 5.5628,-1.20174 12.45656,2.91594c0.55384,0.33024 1.16175,0.49047 1.76031,0.49047c1.1696,0 2.30953,-0.59609 2.95625,-1.67969c0.97352,-1.63056 0.44134,-3.74304 -1.18922,-4.71656c-5.91895,-3.53245 -11.19908,-4.12508 -14.405,-4.05141zM55.24156,44.67297c7.74725,0.23936 15.2443,3.3231 20.33765,8.79485l-3.26531,10.32672c-6.3812,-6.28832 -14.96652,-8.8889 -22.9714,-8.8889c-3.3196,0 -6.536,0.44112 -9.46,1.2564c-4.75064,1.32784 -8.78866,3.56648 -11.91906,6.4836c2.03992,-6.79744 6.64124,-12.07677 13.53156,-15.23813c4.36149,-1.99692 9.09821,-2.87814 13.74656,-2.73453zM117.77297,54.27406c0.88193,0.00086 1.76203,0.32594 2.40531,0.9675c0.65704,0.66048 1.02125,1.52682 1.02125,2.45906c0,0.9288 -0.36437,1.79546 -1.01453,2.44562l-29.15937,29.01156c-0.4816,0.4816 -0.81319,1.09295 -0.94735,1.76031l-2.22391,11.11281l-11.83172,11.48906h-1.75359c-5.6092,-1.59485 -10.80103,-3.82973 -15.53375,-6.51047l12.45656,-12.46328l8.12969,-3.58781c0.38872,-0.172 0.74212,-0.41618 1.0414,-0.7189l35.00469,-34.99797c0.64156,-0.645 1.52338,-0.96836 2.40531,-0.9675zM27.37219,86.94735c6.18263,9.35924 16.08849,19.45374 28.96453,26.57265h-12.70515c-6.57087,-2.43832 -14.19675,-13.33749 -16.25938,-26.57265zM20.64,120.4h22.36672l26.86828,0.3561c-2.33179,0.77371 -4.80663,1.94207 -7.4914,3.59453c-16.09819,9.89842 -30.40963,15.51491 -41.7436,16.48781zM82.8086,120.4h26.61969c5.13155,10.11843 15.258,14.31765 24.32859,14.31765c1.69248,0 3.34933,-0.14792 4.92485,-0.43c5.34446,-0.94719 9.69384,-3.33662 12.67828,-6.6314v13.6525c-6.59064,0.52033 -26.22691,1.29186 -41.97203,-6.7725c-4.5924,-2.35296 -8.52545,-4.74112 -11.99297,-6.8464c-5.2325,-3.17514 -9.8256,-5.95227 -14.5864,-7.28985zM117.55797,120.4h30.44266c-1.75752,4.09003 -6.2714,6.35465 -10.52156,7.10844c-6.57816,1.16658 -14.89427,-0.73144 -19.9211,-7.10844zM76.62063,126.44015c5.25335,-0.11392 10.0061,2.76866 17.2,7.13531c3.57072,2.1672 7.61041,4.6218 12.42297,7.08828c12.70736,6.51192 27.70818,7.82062 37.73922,7.82062c3.01262,0 5.45732,-0.12362 7.37719,-0.25531v3.13094h-46.10406c-3.36976,-5.89997 -8.67072,-10.32411 -15.16422,-12.55063c-7.43728,-2.55592 -15.59336,-2.04234 -22.36672,1.39078c-2.57656,1.30376 -5.03374,2.94916 -7.41078,4.54188c-5.08088,3.40216 -9.87694,6.61797 -15.59422,6.61797h-24.08v-3.5811c15.68251,-1.18356 33.1102,-10.04421 45.34485,-17.56953c4.14993,-2.55162 7.48376,-3.70087 10.63578,-3.76922zM81.3439,144.11719c2.20631,0.07908 4.41035,0.47354 6.51047,1.19594c2.72207,0.93335 6.13951,2.72853 9.02328,6.04687h-34.12453c0.45733,-0.30377 0.94379,-0.60725 1.39078,-0.90703c2.30824,-1.54456 4.48684,-3.00059 6.69188,-4.1186c3.1605,-1.59745 6.83095,-2.34897 10.50812,-2.21719z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></span>
+                        </div>
+                        <div class="how_we_use_donation_content">
+                            <h3>Artesanos</h3>
+                            <ul class="ul">
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Generar una propuesta de mejoramiento y generación de
+                                        oportunidades
+                                        comerciales a través de un sistema virtual de comercialización de productos
+                                        artesanales del municipio.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Implementar el corredor turístico artesanal.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Crear Padrón de Artesanos.</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="how_we_use_donation_box">
+                        <div class="how_we_use_donation_iocn">
+                            <span class="fas fa-female"></span>
+                        </div>
+                        <div class="how_we_use_donation_content">
+                            <h3>Mujeres</h3>
+                            <ul class="ul">
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Consolidar los beneficios de los programas de la economía social
+                                        que
+                                        financian los proyectos productivos de las mujeres.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Contribuir a la defensa de los derechos de las mujeres en todos
+                                        los ámbitos
+                                        de actividad y desarrollo.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Convocar a las organizaciones de la sociedad civil a la
+                                        participación en las
+                                        acciones que mejoran la vida comunitaria y familiar de la mujer</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Avanzar en la gestión del modelo de equidad de género y de
+                                        protección de
+                                        los derechos de las mujeres que garantiza el acceso a toda actividad
+                                        comunitaria, productiva y política.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Disponer de acciones para la protección de la mujer en caso de
+                                        violencia
+                                        familiar o acoso mediante espacios que den cuidado, habitación y asesoría. </a>
+                                </li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Disponer de acciones para la protección de la mujer en caso de
+                                        violencia
+                                        familiar o acoso mediante espacios que den cuidado, habitación y asesoría. </a>
+                                </li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Atender las iniciativas de las mujeres jefas de familia y madres
+                                        solteras
+                                        trabajadoras, orientadas al mejoramiento de la calidad de vida comunitaria y
+                                        familiar.</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="how_we_use_donation_inner right">
+                    <div class="how_we_use_donation_box">
+                        <div class="how_we_use_donation_iocn">
+                            <span><img
+                                    src="data:image/png;base64,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"></span>
+                        </div>
+                        <div class="how_we_use_donation_content">
+                            <h3>Innovacion municipal</h3>
+                            <ul class="ul">
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Actualizar el marco reglamentario municipal con base en la
+                                        evolución
+                                        legislativa de la Federación y el Estado. <br>La transformación de las
+                                        actividades
+                                        públicas y privadas del municipio, demandas de modernización de los servicios
+                                        públicos, del desarrollo social, comunitario y del desarrollo humano.</a>
+                                </li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Elaborar propuestas de actualización normativa con base en
+                                        lineamientos para la revisión y análisis de marco reglamentario municipal.</a>
+                                </li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Establecer criterios transversales en la modernización
+                                        reglamentaria municipal de equidad, transparencia, simplificación
+                                        administrativas y mejora regulatoria.</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="how_we_use_donation_box">
+                        <div class="how_we_use_donation_iocn">
+                            <span class="far fa-handshake"></span>
+                        </div>
+                        <div class="how_we_use_donation_content">
+                            <h3>Transparencia</h3>
+                            <ul class="ul">
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Un gobierno honesto, que cuida el dinero.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Calkini con un gobierno transparente.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Gobierno de puertas abiertas.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Crear condiciones favorables para mejorar la prestación de
+                                        servicios, reducir
+                                        la desigualdad social y fortalecer la inversión privada</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="how_we_use_donation_box">
+                        <div class="how_we_use_donation_iocn">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#ffffff">
+                                            <path
+                                                d="M114.66667,84.409v-41.409h-57.33333v41.409l-35.83333,15.92433v35.83333c0,11.87517 9.62483,21.5 21.5,21.5h86c11.87517,0 21.5,-9.62483 21.5,-21.5v-35.83333z"
+                                                opacity="0.35"></path>
+                                            <circle cx="18" cy="18" transform="scale(7.16667,7.16667)" r="1"></circle>
+                                            <circle cx="6" cy="18" transform="scale(7.16667,7.16667)" r="1"></circle>
+                                            <path
+                                                d="M57.33333,43c0,-25.08333 28.66667,-28.66667 28.66667,-28.66667c0,0 28.66667,3.58333 28.66667,28.66667z">
+                                            </path>
+                                            <circle cx="12" cy="2" transform="scale(7.16667,7.16667)" r="1"></circle>
+                                            <path
+                                                d="M107.5,136.16667c0,-11.87517 -9.62483,-21.5 -21.5,-21.5c-11.87517,0 -21.5,9.62483 -21.5,21.5c0,5.53267 0,15.96733 0,21.5h43c0,-5.53267 0,-15.96733 0,-21.5z">
+                                            </path>
+                                            <path
+                                                d="M150.49283,107.5c-0.97467,0 -1.9565,-0.20067 -2.9025,-0.6235l-61.59033,-27.3695l-61.59033,27.3695c-3.60483,1.634 -7.85467,-0.01433 -9.46,-3.6335c-1.60533,-3.61917 0.0215,-7.85467 3.64067,-9.46l64.5,-28.66667c1.86333,-0.82417 3.96317,-0.82417 5.81933,0l64.5,28.66667c3.61917,1.60533 5.23883,5.84083 3.64067,9.46c-1.18967,2.67317 -3.8055,4.257 -6.5575,4.257z">
+                                            </path>
+                                            <path
+                                                d="M114.66667,50.16667h-57.33333c-3.96317,0 -7.16667,-3.21067 -7.16667,-7.16667c0,-3.956 3.2035,-7.16667 7.16667,-7.16667h57.33333c3.96317,0 7.16667,3.21067 7.16667,7.16667c0,3.956 -3.2035,7.16667 -7.16667,7.16667z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></span>
+                        </div>
+                        <div class="how_we_use_donation_content">
+                            <h3>Servicios publicos</h3>
+                            <ul class="ul">
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Con una aplicación Calkiapp, herramienta digital para reportar
+                                        fallas en los
+                                        servicios municipales.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Aseguraremos de que las luminarias funcionen y se encuentren en
+                                        estado
+                                        óptimo</a style=" font-family: 'Montserrat', sans-serif; text-align: justify;"></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Usaremos materiales reciclables en el ayuntamiento, además de
+                                        digitalizar
+                                        oficios y documentación; también propiciaremos la reducción de uso de
+                                        papel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="how_we_use_donation_box">
+                        <div class="how_we_use_donation_iocn">
+                            <span class="fas fa-wheelchair"></span>
+                        </div>
+                        <div class="how_we_use_donation_content">
+                            <h3>Personas con discapacidad</h3>
+                            <ul class="ul">
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Ampliaremos la cobertura del programa “Espacios 100%
+                                        incluyentes”, con el
+                                        que buscaremos que las banquetas, pasos a desnivel y edificios públicos,
+                                        cuenten con accesibilidad universal.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Invertiremos en las unidades deportivas para que se transformen
+                                        en espacios
+                                        100% incluyentes, y así impulsen el deporte adaptado para personas con
+                                        discapacidad.</a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Arrancaremos un modelo de atención orientado a que las personas
+                                        con discapacidad intelectual reciban las terapias adecuadas, facilitando su
+                                        inclusión familiar, comunitaria y social.
+                                    </a></li>
+                                <li class="liabout"><a style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Impulsaremos el programa “Estamos contigo”, que proporcionará
+                                        apoyos a
+                                        quienes se dediquen a cuidar a personas con alguna discapacidad severa.</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--How We Use Donation End-->
+
+<!--History Start-->
+<section class="history">
+    <div class="container">
+        <div class="block-title text-center">
+            <h2>NUESTRA HISTORIA</h2>
+            <h4></h4>
+
+        </div>
+        <div class="history_box clearfix">
+            <ul class="list-unstyled history_main_box">
+                <li>
+                    <div class="history_date_box">
+                        <span>9 de julio de 2009</span>
+                    </div>
+                    <div class="history_content_box">
+                        <h3 >Regidor del <br>H Ayuntamiento de Calkiní</h3>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="history_date_box">
+                        <span>27 de Marzo 2021</span>
+                    </div>
+                    <div class="history_content_box">
+                        <h3>Elección interna candidato presidente municipal</h3>
+                        <p style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Movimiento ciudadano</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="history_main_box_border"></div>
+
+
+            <ul class="list-unstyled history_main_box two">
+                <li>
+                    <div class="history_date_box">
+                        <span>2 de Abril 2021</span>
+                    </div>
+                    <div class="history_content_box">
+                        <h3>Registro como candidato</h3>
+                        <p style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Alcaldía del municipio de Calkiní</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="history_date_box">
+                        <span>14 de Abril 2021</span>
+                    </div>
+                    <div class="history_content_box">
+                        <h3>Arranque de campaña</h3>
+                        <p style=" font-family: 'Montserrat', sans-serif; text-align: justify;">Calkiní sonríe al futuro</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--History End-->
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'miltonblog/base.html' %}
+{% block navbar %}
+<div class="main-nav__main-navigation one float-right">
+    <ul class=" main-nav__navigation-box float-left">
+        <li class="">
+            <a href="{% url 'home' %}">Inicio</a>
+        </li>
+        <li class=""><a href="{% url 'about' %}">Acerca</a></li>
+        <li class="dropdown">
+            <a>Publicaciones</a>
+            <ul>
+                <li><a href="{% url 'fotos' %}">Fotos</a></li>
+                <li><a href="{% url 'video' %}">videos</a></li>
+
+            </ul>
+        </li>
+        <li class="current"><a href="{% url 'sonrisas' %}">Descargas</a></li>
+
+    </ul>
+
+</div><!-- /.navbar-collapse -->
+{% endblock %}
+
+{% block wrapper %}
+
+<br>
+<h1 style="text-align: center;">Imprime y apoya</h1>
+<br>
+
+<div class="embed-responsive embed-responsive-16by9">
+    {% for sonrisas in  posts %}
+    <iframe class="embed-responsive-item" src="{{sonrisas.pdf.url}} " allowfullscreen></iframe>
+    {% endfor %}
+  </div>
+{% endblock %}

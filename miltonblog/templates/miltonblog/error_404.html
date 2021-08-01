@@ -1,0 +1,31 @@
+{% extends 'miltonblog/postfotos.html' %}
+{% load static %}
+{% block wrapper %}
+
+<style>
+  body {
+  background-color: #FA710A;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+</style>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="mainbox">
+    <div class="err">4</div>
+    <i class="far fa-question-circle fa-spin icono"></i>
+    <div class="err2">4</div>
+    <div class="msg">Página no encontrada <p>Lo sentimos pera la página a la que estas intentando acceder no existe o ha cambiado.</p> <p>Prueba a dirigirte hacia nuestra <a href="{% url 'home' %}">página principal</a>.</p></div>
+      </div>
+{% endblock %}
+        
